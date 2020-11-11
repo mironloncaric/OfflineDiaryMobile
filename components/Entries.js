@@ -1,14 +1,33 @@
 import React from 'react'
-import { View, Text } from 'react-native'
+import { View, Text } from 'native-base'
+
+import Entry from './Entry'
 
 export default function Entries() {
+
+    const entries = [
+        {
+            emoji:'😀',
+            content:'Est incididunt ut sunt non cupidatat magna elit do.',
+            id:'#1'
+        }
+    ]
+
     return (
         <View style={{
-            flex:1,
-            justifyContent:'center',
-            alignItems:'center'
+            alignSelf:'center',
+            width:'96%',
+            margin:10,
+            flexWrap:'wrap',
+            alignContent:'center'
         }}>
-            <Text>Entires...</Text>
+            {
+                entries.map((entry, id) => (
+                    <Entry 
+                        key={ id }
+                    />
+                ))
+            }
         </View>
     )
 }

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { StyleSheet } from 'react-native'
 import { Input, Container, Item, Text, Button } from 'native-base'
 
-export default function Login() {
+export default function Login({ navigation }) {
     
     const [password, setPassword] = useState('')
     const [checkPassword, setCheckPassword] = useState('')
@@ -10,7 +10,7 @@ export default function Login() {
     const [userExists, setUserExists] = useState(false)
 
     const handleSubmit = () => {
-        console.log(password, checkPassword, name)
+        navigation.navigate('Entries')
     }
 
     return (

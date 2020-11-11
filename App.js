@@ -1,13 +1,15 @@
 import 'react-native-gesture-handler'
-import { StatusBar } from 'expo-status-bar'
 import React, { useEffect } from 'react'
 import { StyleSheet, View } from 'react-native'
 import * as Font from 'expo-font'
 import { Container, Header, Body, Title, Text } from 'native-base'
 import { NavigationContainer } from '@react-navigation/native'
-import { createStackNavigator } from '@react-navigation/native'
+import { createStackNavigator } from '@react-navigation/stack'
 
 import Login from './components/Login'
+import Entries from './components/Entries'
+
+const Stack = createStackNavigator()
 
 export default class App extends React.Component {
 
@@ -41,8 +43,15 @@ export default class App extends React.Component {
                     <Title style={ styles.title }>Offline Diary</Title>
                 </Body>
             </Header>
-            <Stack.Navigator style={ styles.container }>
-              <Login />
+            <Stack.Navigator 
+              initialRouteName="Login" 
+              style={ styles.container }
+              screenOptions={{
+                headerShown: false
+              }}
+            >
+              <Stack.Screen name="Login" component={ Login } />
+              <Stack.Screen name="Entries" component={ Entries } />
             </Stack.Navigator>
           </Container>
         </NavigationContainer>

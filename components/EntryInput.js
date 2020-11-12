@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Text, View } from 'native-base'
+import { Text, Textarea, View } from 'native-base'
 import { StyleSheet, Picker } from 'react-native'
 
 export default function Input() {
@@ -39,6 +39,13 @@ export default function Input() {
                     <Picker.Item label="😢" value="😢" />
                 </Picker>
             </View>
+            <Textarea 
+                rowSpan={ 5 }
+                bordered
+                style={{
+                    marginTop:0
+                }}
+            />
         </View>
     )
 }

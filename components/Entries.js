@@ -1,8 +1,9 @@
 import React from 'react'
 import { View, Text, ScrollableTab } from 'native-base'
+import { ScrollView } from 'react-native-gesture-handler'
 
 import Entry from './Entry'
-import { ScrollView } from 'react-native-gesture-handler'
+import EntryInput from './EntryInput'
 
 export default function Entries() {
 
@@ -101,6 +102,7 @@ export default function Entries() {
                 margin:10,
                 alignContent:'center'
             }}>
+                <EntryInput />
                 {
                     entries.map((entry, id) => (
                         <Entry 

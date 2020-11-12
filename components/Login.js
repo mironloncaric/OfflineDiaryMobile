@@ -10,7 +10,7 @@ export default function Login({ navigation }) {
     const [userExists, setUserExists] = useState(false)
 
     const handleSubmit = () => {
-        navigation.navigate('Entries')
+        navigation.navigate('AppLoggedIn')
     }
 
     return (

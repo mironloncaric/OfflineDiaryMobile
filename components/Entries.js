@@ -6,7 +6,7 @@ import Entry from './Entry'
 import EntryInput from './EntryInput'
 import FooterComponent from './FooterComponent'
 
-export default function Entries() {
+export default function Entries({ navigation }) {
 
     const entries = [
         {
@@ -117,7 +117,6 @@ export default function Entries() {
                     }
                 </View>
             </ScrollView>
-            <FooterComponent />
         </>
     )
 }

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Text, Textarea, View } from 'native-base'
+import { Text, Textarea, View, Button } from 'native-base'
 import { StyleSheet, Picker } from 'react-native'
 
 export default function Input() {
@@ -8,44 +8,56 @@ export default function Input() {
 
     return (
         <View style={{
-            borderWidth:1,
-            borderColor:'#dbdbdb',
-            marginBottom:10,
-            borderRadius:4
+            borderBottomColor:'#dbdbdb',
+            borderBottomWidth:1,
+            marginBottom:10
         }}>
             <View style={{
-                flexDirection:'row',
-                flexWrap:'wrap',
                 borderWidth:1,
-                borderColor:'#dbdbdb'
+                borderColor:'#dbdbdb',
+                marginBottom:10,
+                borderRadius:4
             }}>
-                <View style={ styles.header }>
-                    <Text>Dear Diary,</Text>
+                <View style={{
+                    flexDirection:'row',
+                    flexWrap:'wrap',
+                    borderWidth:1,
+                    borderColor:'#dbdbdb'
+                }}>
+                    <View style={ styles.header }>
+                        <Text>Dear Diary,</Text>
+                    </View>
+                    <Picker
+                        selectedValue={ emoji }
+                        onValueChange={ value => setEmoji(value) }
+                        style={{
+                            width:'25%',
+                            height:'100%',
+                            borderColor:'#dbdbdb',
+                            borderWidth:1
+                        }}
+                    >
+                        <Picker.Item label="😀" value="😀" />
+                        <Picker.Item label="🤮" value="🤮" />
+                        <Picker.Item label="😍" value="😍" />
+                        <Picker.Item label="😎" value="😎" />
+                        <Picker.Item label="😢" value="😢" />
+                    </Picker>
                 </View>
-                <Picker
-                    selectedValue={ emoji }
-                    onValueChange={ value => setEmoji(value) }
+                <Textarea 
+                    rowSpan={ 5 }
+                    bordered
                     style={{
-                        width:'25%',
-                        height:'100%',
-                        borderColor:'#dbdbdb',
-                        borderWidth:1
+                        marginTop:0
                     }}
-                >
-                    <Picker.Item label="😀" value="😀" />
-                    <Picker.Item label="🤮" value="🤮" />
-                    <Picker.Item label="😍" value="😍" />
-                    <Picker.Item label="😎" value="😎" />
-                    <Picker.Item label="😢" value="😢" />
-                </Picker>
+                />
             </View>
-            <Textarea 
-                rowSpan={ 5 }
-                bordered
-                style={{
-                    marginTop:0
-                }}
-            />
+            <Button style={{
+                marginTop:0,
+                marginBottom:10
+            }}>
+                <Text>Submit</Text>
+            </Button>
         </View>
     )
 }

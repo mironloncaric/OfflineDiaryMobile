@@ -2,7 +2,16 @@ import 'react-native-gesture-handler'
 import React, { useEffect } from 'react'
 import { StyleSheet, View } from 'react-native'
 import * as Font from 'expo-font'
-import { Container, Header, Body, Title, Text } from 'native-base'
+import { 
+  Container, 
+  Header, 
+  Body, 
+  Title, 
+  Text, 
+  Footer, 
+  FooterTab,
+  Button
+} from 'native-base'
 import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
 

@@ -17,6 +17,7 @@ import { createStackNavigator } from '@react-navigation/stack'
 
 import Login from './components/Login'
 import Entries from './components/Entries'
+import Graphs from './components/Graphs'
 
 const Stack = createStackNavigator()
 
@@ -43,7 +44,9 @@ export default class App extends React.Component {
         <Text>Hello world</Text>
       )
     }
+
     else {
+
       return (
         <NavigationContainer>
           <Container>
@@ -61,13 +64,14 @@ export default class App extends React.Component {
             >
               <Stack.Screen name="Login" component={ Login } />
               <Stack.Screen name="Entries" component={ Entries } />
+              <Stack.Screen name="Graphs" component={ Graphs } />
             </Stack.Navigator>
           </Container>
         </NavigationContainer>
       );
+
     }
   }
-
 }
 
 const styles = StyleSheet.create({

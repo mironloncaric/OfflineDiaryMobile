@@ -54,7 +54,8 @@ export default function Input() {
             </View>
             <Button style={{
                 marginTop:0,
-                marginBottom:10
+                marginBottom:10,
+                backgroundColor:'#32a4a8'
             }}>
                 <Text>Submit</Text>
             </Button>

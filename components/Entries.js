@@ -4,6 +4,7 @@ import { ScrollView } from 'react-native-gesture-handler'
 
 import Entry from './Entry'
 import EntryInput from './EntryInput'
+import FooterComponent from './FooterComponent'
 
 export default function Entries() {
 
@@ -95,25 +96,28 @@ export default function Entries() {
     ]
 
     return (
-        <ScrollView >
-            <View style={{
-                alignSelf:'center',
-                width:'96%',
-                margin:10,
-                alignContent:'center'
-            }}>
-                <EntryInput />
-                {
-                    entries.map((entry, id) => (
-                        <Entry 
-                            key={ id }
-                            emoji={ entry.emoji }
-                            date={ entry.date }
-                            content={ entry.content }
-                        />
-                    ))
-                }
-            </View>
-        </ScrollView>
+        <>
+            <ScrollView >
+                <View style={{
+                    alignSelf:'center',
+                    width:'96%',
+                    margin:10,
+                    alignContent:'center'
+                }}>
+                    <EntryInput />
+                    {
+                        entries.map((entry, id) => (
+                            <Entry 
+                                key={ id }
+                                emoji={ entry.emoji }
+                                date={ entry.date }
+                                content={ entry.content }
+                            />
+                        ))
+                    }
+                </View>
+            </ScrollView>
+            <FooterComponent />
+        </>
     )
 }

@@ -17,6 +17,8 @@ import { createStackNavigator } from '@react-navigation/stack'
 
 import Login from './components/Login'
 import Entries from './components/Entries'
+import Graphs from './components/Graphs'
+import AppLoggedIn from './components/AppLoggedIn'
 
 const Stack = createStackNavigator()
 
@@ -40,7 +42,13 @@ export default class App extends React.Component {
   render() {
     if(this.state.loading){
       return (
-        <Text>Hello world</Text>
+        <View style={{
+          flex:1,
+          justifyContent:'center',
+          alignContent:'center'
+        }}>
+          <Text>Loading...</Text>
+        </View>
       )
     }
     else {
@@ -60,7 +68,7 @@ export default class App extends React.Component {
               }}
             >
               <Stack.Screen name="Login" component={ Login } />
-              <Stack.Screen name="Entries" component={ Entries } />
+              <Stack.Screen name="AppLoggedIn" component={ AppLoggedIn } />
             </Stack.Navigator>
           </Container>
         </NavigationContainer>
